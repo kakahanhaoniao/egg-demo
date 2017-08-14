@@ -1,5 +1,5 @@
-#egg应用中引入swagger辅助开发调试
-##前言
+# egg应用中引入swagger辅助开发调试
+## 前言
 前后端分离已经是业界所共识的一种开发/部署模式了。所谓的前后端分离，并不是传统行业中的按部门划分，一部分人纯做前端（HTML/CSS/JavaScript/Flex），另一部分人纯做后端，因为这种方式是不工作的：比如很多团队采取了后端的模板技术（JSP, FreeMarker, ERB等等），前端的开发和调试需要一个后台Web容器的支持，从而无法做到真正的分离（更不用提在部署的时候，由于动态内容和静态内容混在一起，当设计动态静态分流的时候，处理起来非常麻烦）。关于前后端开发的另一个讨论可以[参考这里](http://icodeit.org/2015/06/do-we-really-short-for-front-end-developer/)。
 
 即使通过API来解耦前端和后端开发过程，前后端通过RESTFul的接口来通信，前端的静态内容和后端的动态计算分别开发，分别部署，集成仍然是一个绕不开的问题 — 前端/后端的应用都可以独立的运行，但是集成起来却不工作。我们需要花费大量的精力来调试，直到上线前仍然没有人有信心所有的接口都是工作的。
@@ -8,10 +8,10 @@
 
 不过，仅仅靠纪律是不够的，还需要通过工具的辅助来提高效率。下面，我们就来看一下，一个API设计工具——Swagger，将如何帮助我们更好的实现“前后端分离”。
 
-##Swagger
+## Swagger
 Swagger 是一个规范和完整的框架，用于生成、描述、调用和可视化 RESTful 风格的 Web 服务。总体目标是使客户端和文件系统作为服务器以同样的速度来更新。文件的方法，参数和模型紧密集成到服务器端的代码，允许API来始终保持同步。Swagger 让部署管理和使用功能强大的API从未如此简单。
 如何引入swagger到我们的项目中
-###一、 swaggerUi安装
+### 一、 swaggerUi安装
 1.下载swagger ui: 
 git clone https://github.com/swagger-api/swagger-ui.git
 
@@ -51,7 +51,7 @@ config.swagger = {
 6. 到此为止，swaggerui配置结束
 note: 同时可参照网络文档http://www.jianshu.com/p/d6626e6bd72c
 
-###二、swagger-jsdoc （编写文档并发布）
+### 二、swagger-jsdoc （编写文档并发布）
 swagger-jsdoc能够抓取文件中以@swagger开头注释，生成swagger api的json文件
 swagger采用[json-schema](http://json-schema.org/)进行定义
 
@@ -156,7 +156,7 @@ definitions及定义数据模型，模型可以被引用，作为response值，�
  ```
 parameters表示参数定义 in参数主要分为 body query path formData四中形式，query path formData三种方式定义类似，都是 - name:参数 in:类型 type:格式 description:描述。 只有body定时方式不同，- name: body in:body required:是否必填 schema:body内数据描述，即body内所有描述都通过schema定义
 
-##swagmock
+## swagmock
 根据swagger-jsdoc生成的api json文件，生成相应的mock数据
 
 1. 使用方式：
