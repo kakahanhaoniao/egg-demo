@@ -24,4 +24,3 @@ app/view/*
 !app/view/layout.html
 !app/view/README.md
 node_modules*.*
-docs/
