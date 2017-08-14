@@ -1,0 +1,10 @@
+coverage
+private/
+run/
+node_modules/
+app/mocks
+plugins/
+public/
+app/web/asset/
+node_modules.*\.tar
+app/view/

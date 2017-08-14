@@ -1,0 +1,34 @@
+{
+    "extends": "eslint-config-egg",
+    "parserOptions": {
+	    "ecmaVersion": 6,
+	    "sourceType": "module"
+	},
+    "rules": {
+        "indent": ["error", 4],
+	    "array-bracket-spacing": "off",
+    	"eol-last": "off",
+        "comma-dangle": [
+            "error",
+            "never"
+        ],
+        "strict": "off",
+        "no-unused-vars": [
+            "error",
+            {
+                "vars": "all",
+                "args": "none"
+            }
+        ]
+    },
+    "env": {
+        "browser": true,
+        "node": true,
+        "commonjs": true,
+        "es6": true
+    },
+    "plugins": [
+        "vue"
+    ],
+    "parser": "babel-eslint"
+}
